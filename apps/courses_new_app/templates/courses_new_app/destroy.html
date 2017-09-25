@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Are you sure you want to delete the following course?</h2>
+	<p>Name: {{course.name}}</p>
+	<p>Description: {{course.description}}</p>
+	<a href='/'>No</a>
+	<form action="/courses/{{course.id}}" method='POST'>
+		{% csrf_token %}
+		<button type='submit' name='yes' value="{{course.id}}">Yes I want to delete this</button>
+	</form>
+</body>
+</html>
